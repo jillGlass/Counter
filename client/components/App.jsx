@@ -1,13 +1,12 @@
 import React from 'react'
-import Counter from './Counter'
+import Counters from './Counters'
 
 
 
 const App = () => {
   return (
     <React.Fragment>
-    <h1>Counter</h1>
-    <Counter />
+    <Counters />
     </React.Fragment>
   )
 }
