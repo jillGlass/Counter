@@ -7,6 +7,10 @@ class Counter extends React.Component {
     tags: ["tag1", "tag2", "tag3"]
   };
 
+  handleIncrement = () => {
+    this.setState({count: this.state.count +1})
+  };
+  
   render() {
     return (
       <React.Fragment>
@@ -27,9 +31,7 @@ class Counter extends React.Component {
     return classes;
   }
 
-  handleIncrement = () => {
-    this.setState({count: this.state.count +1})
-  };
+  
 
   formatCount() {
     const { count } = this.state;
