@@ -28,9 +28,9 @@ class Counters extends React.Component {
   };
 
   handleReset = () => {
-    const counters = this.state.counters.map(counter => {
-      counter.value = 0;
-      return counters;
+    const counters = this.state.counters.map(c => {
+      c.value = 0;
+      return c;
     });
     this.setState({ counters });
   };
@@ -50,9 +50,11 @@ class Counters extends React.Component {
         {this.state.counters.map(counter => (
           <Counter
             key={counter.id}
-            counter={counter}
-            onIncrement={this.handleIncrement}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
+            counter={counter}
+            
+            
           >
             {" "}
             <h4>Counter # {counter.id}</h4>
