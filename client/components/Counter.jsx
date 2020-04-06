@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 class Counter extends React.Component {
   state = {
-    count: 0,
+    count: this.props.value,
     tags: ["tag1", "tag2", "tag3"]
   };
 
@@ -12,8 +12,9 @@ class Counter extends React.Component {
   };
   
   render() {
+    console.log('props', this.props)
     return (
-      <React.Fragment>
+      <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <Button
           onClick={this.handleIncrement}
@@ -21,7 +22,7 @@ class Counter extends React.Component {
         >
           Increment
         </Button>
-      </React.Fragment>
+      </div>
     );
   }
 
