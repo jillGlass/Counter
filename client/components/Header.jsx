@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Header extends Component {
-  render() {
-    return (
+const Header = props => {
+  return (
+    <div>
       <nav className="navbar navbar-light bg-light">
         <span className="navbar-brand mb-0 h1">Navbar</span>
-    <span className='badge badge-pill badge-secondary'>{this.props.totalCounters}</span>
+        <span className="badge badge-pill badge-secondary">
+          {props.totalCounters}
+        </span>
       </nav>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Header;
