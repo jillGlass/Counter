@@ -16,6 +16,7 @@ class Counters extends React.Component {
             onIncrement={onIncrement}
             onDecrement={onDecrement}
             counter={counter}
+            
           ></Counter>
         ))}
       </div>

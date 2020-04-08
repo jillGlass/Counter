@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Button, Badge } from "react-bootstrap";
 
 class Counter extends React.Component {
 
@@ -7,25 +7,27 @@ class Counter extends React.Component {
     return (
       <div>
         {this.props.children}
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <Badge style={{width: 55}}className={this.getBadgeClasses()}>{this.formatCount()}</Badge>
         <Button
           onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-secondary btn-sm"
         >
           +
         </Button>
-        <button
+        
+        <Button
           onClick={() => this.props.onDecrement(this.props.counter)}
-          className="btn btn-secondary m-2 btn-sm disabled"
+          className="btn btn-secondary m-2 btn-sm"
+          disabled={this.props.counter.value === 0 ? 'disabled' : ''}
         >
           -
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger m-2 btn-sm"
         >
           x
-        </button>
+        </Button>
       </div>
     );
   }
@@ -39,6 +41,7 @@ class Counter extends React.Component {
   formatCount() {
     const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
+  
   }
 }
 
