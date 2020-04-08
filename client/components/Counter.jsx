@@ -12,13 +12,13 @@ class Counter extends React.Component {
           onClick={() => this.props.onIncrement(this.props.counter)}
           className="btn btn-secondary btn-sm"
         >
-          Increment
+          +
         </Button>
         <button
           onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger m-2 btn-sm"
         >
-          Delete
+          x
         </button>
       </div>
     );
